@@ -1,0 +1,23 @@
+
+
+class Solution {
+    public int removeElement(int[] nums, int val) {
+        // Create an ArrayList to store valid elements
+        ArrayList<Integer> arr = new ArrayList<>();
+
+        // Traverse through the original array and add valid elements to the ArrayList
+        for (int num : nums) {
+            if (num != val) {
+                arr.add(num);
+            }
+        }
+
+        // Copy elements back to the original array up to the size of the ArrayList
+        for (int i = 0; i < arr.size(); i++) {
+            nums[i] = arr.get(i);
+        }
+
+        // Return the size of the ArrayList, which represents the number of valid elements
+        return arr.size();
+    }
+}
